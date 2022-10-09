@@ -15,13 +15,13 @@ return new class extends Migration
     {
         Schema::create('subscribes', function (Blueprint $table) {
             $table->id();
-            $table->uid();
-            $table->name();
-            $table->amount();
-            $table->payment();
-            $table->start();
-            $table->end()->nullable();
-            $table->interval();
+            $table->integer('uid');
+            $table->string('name');
+            $table->integer('amount');
+            $table->string('payment');
+            $table->date('start');
+            $table->date('end')->nullable();
+            $table->integer('interval-month');
             $table->timestamps();
         });
     }
