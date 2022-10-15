@@ -13,15 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('subscribes', function (Blueprint $table) {
+        Schema::create('subscribe', function (Blueprint $table) {
             $table->id();
-            $table->integer('uid');
             $table->string('name');
-            $table->integer('amount');
+            $table->integer('cycle');
+            $table->integer('price');
+            $table->date('firstPaymentDate')->nullable();
             $table->string('payment');
-            $table->date('start');
-            $table->date('end')->nullable();
-            $table->integer('interval-month');
             $table->timestamps();
         });
     }
