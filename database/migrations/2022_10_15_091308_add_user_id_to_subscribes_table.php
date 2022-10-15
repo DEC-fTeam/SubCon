@@ -13,14 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('subscribes', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->integer('cycle');
-            $table->integer('price');
-            $table->date('firstPaymentDate')->nullable();
-            $table->string('payment');
-            $table->timestamps();
+        Schema::table('subscribes', function (Blueprint $table) {
+            //
+            $table->foreignId('user_id')->after('id')->nullable()->constrained()->cascadeOnDelete();
         });
     }
 
@@ -31,6 +26,10 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('subscribes');
+        Schema::table('subscribes', function (Blueprint $table) {
+            //
+            $table->dropForeign(['user_id']);
+            $table->dropColumn(['user_id']);
+        });
     }
 };
