@@ -20,11 +20,11 @@
             </div>
             <div class="flex flex-col mb-4">
               <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="subscribePrice">Subscribe Price</label>
-              <input class="border py-2 px-3 text-grey-darkest" type="text" name="price" id="price">
+              <input class="border py-2 px-3 text-grey-darkest" type="text" name="price" id="price">円
             </div>
             <div class="flex flex-col mb-4">
               <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="paymentCycle">Payment cycle</label>
-              <input class="border py-2 px-3 text-grey-darkest" type="text" name="cycle" id="cycle">
+              <input class="border py-2 px-3 text-grey-darkest" type="text" name="cycle" id="cycle">ヶ月
             </div>
             <div class="flex flex-col mb-4">
               <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="payment">Payment</label>

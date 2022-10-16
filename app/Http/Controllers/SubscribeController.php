@@ -71,6 +71,8 @@ class SubscribeController extends Controller
     public function show($id)
     {
         //
+        $subscribe = Subscribe::find($id);
+        return view('subscribe.show', compact('subscribe'));
     }
 
     /**
@@ -102,8 +104,18 @@ class SubscribeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function destroy($id)
     {
         //
+        $result = Subscribe::find($id)->delete();
+        return redirect()->route('subscribe.index');
     }
+
+    public function delete($id)
+    {
+        $subscribe = Subscribe::find($id);
+        return view('subscribe.delete', compact('subscribe'));
+    }
+
 }
