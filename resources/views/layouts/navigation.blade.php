@@ -16,6 +16,12 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
+                
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('subscribe.index')" :active="request()->routeIs('subscribe.index')">
+                        {{ __('Subscribe') }}
+                    </x-nav-link>
+                </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('subscribe.create')" :active="request()->routeIs('subscribe.create')">
                         {{ __('Create') }}
