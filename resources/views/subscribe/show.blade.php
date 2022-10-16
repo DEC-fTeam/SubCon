@@ -43,9 +43,9 @@
               </p>
             </div>
             <a href="{{ route('subscribe.delete',$subscribe->id) }}">
-              <h3 class="text-left font-bold text-lg text-grey-dark">削除</h3>
+              <h3 class="block text-center w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">削除</h3>
             </a>
-            <a href="{{ url()->previous() }}" class="text-left font-bold text-lg text-grey-dark">
+            <a href="{{ url()->previous() }}" class="block text-center w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
               Back
             </a>
           </div>
