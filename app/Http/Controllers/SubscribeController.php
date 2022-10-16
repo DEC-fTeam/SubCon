@@ -43,9 +43,10 @@ class SubscribeController extends Controller
         //バリデーション
         $validator = Validator::make($request->all(), [
             'name' => 'required | max:191',
-            'price' => 'required',
-            'cycle' => 'required',
+            'price' => 'required | integer',
+            'cycle' => 'required | integer',
             'payment' => 'required',
+
         ]);
         //バリデーションエラー
         if ($validator-> fails()) {
