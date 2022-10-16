@@ -15,10 +15,11 @@ class SubscribeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
-        return view('subscribe.index');
-    }
+{
+  // 🔽 編集
+  $subscribes = Subscribe::getAllOrderByUpdated_at();
+  return view('subscribe.index',compact('subscribes'));
+}
 
     /**
      * Show the form for creating a new resource.
