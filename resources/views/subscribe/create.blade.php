@@ -15,20 +15,20 @@
           <form class="mb-6" action="{{ route('subscribe.store') }}" method="POST">
             @csrf
             <div class="flex flex-col mb-4">
-              <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="tweet">Subscribe Title</label>
-              <input class="border py-2 px-3 text-grey-darkest" type="text" name="tweet" id="tweet">
+              <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="SubscribeTitle">Subscribe Title</label>
+              <input class="border py-2 px-3 text-grey-darkest" type="text" name="subscribeTitle" id="subscribeTitle">
             </div>
             <div class="flex flex-col mb-4">
-              <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="tweet">Subscribe Price</label>
-              <input class="border py-2 px-3 text-grey-darkest" type="text" name="tweet" id="tweet">
+              <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="subscribePrice">Subscribe Price</label>
+              <input class="border py-2 px-3 text-grey-darkest" type="text" name="subscribePrice" id="subscribePrice">
             </div>
             <div class="flex flex-col mb-4">
-              <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="tweet">Payment cycle</label>
-              <input class="border py-2 px-3 text-grey-darkest" type="text" name="tweet" id="tweet">
+              <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="paymentCycle">Payment cycle</label>
+              <input class="border py-2 px-3 text-grey-darkest" type="text" name="paymentCycle" id="paymentCycle">
             </div>
             <div class="flex flex-col mb-4">
-              <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="description">Payment</label>
-              <input class="border py-2 px-3 text-grey-darkest" type="text" name="description" id="description">
+              <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="payment">Payment</label>
+              <input class="border py-2 px-3 text-grey-darkest" type="text" name="payment" id="payment">
             </div>
             <button type="submit" class="w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
               Create

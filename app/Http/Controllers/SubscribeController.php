@@ -39,7 +39,12 @@ class SubscribeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //バリデーション
+        $validator = Validator::make($repuest->all(), [
+            'subscribeTitle' => 'required | max:191',
+            ''
+        ]);
+
     }
 
     /**
