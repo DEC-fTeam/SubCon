@@ -16,19 +16,23 @@
             @csrf
             <div class="flex flex-col mb-4">
               <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="SubscribeTitle">Subscribe Title</label>
-              <input class="border py-2 px-3 text-grey-darkest" type="text" name="subscribeTitle" id="subscribeTitle">
+              <input class="border py-2 px-3 text-grey-darkest" type="text" name="name" id="name">
             </div>
             <div class="flex flex-col mb-4">
               <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="subscribePrice">Subscribe Price</label>
-              <input class="border py-2 px-3 text-grey-darkest" type="text" name="subscribePrice" id="subscribePrice">
+              <input class="border py-2 px-3 text-grey-darkest" type="text" name="price" id="price">
             </div>
             <div class="flex flex-col mb-4">
               <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="paymentCycle">Payment cycle</label>
-              <input class="border py-2 px-3 text-grey-darkest" type="text" name="paymentCycle" id="paymentCycle">
+              <input class="border py-2 px-3 text-grey-darkest" type="text" name="cycle" id="cycle">
             </div>
             <div class="flex flex-col mb-4">
               <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="payment">Payment</label>
               <input class="border py-2 px-3 text-grey-darkest" type="text" name="payment" id="payment">
+            </div>
+            <div class="flex flex-col mb-4">
+              <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="firstPayment">Start payDay</label>
+              <input class="border py-2 px-3 text-grey-darkest" type="text" name="firstpayment" id="firstpayment">
             </div>
             <button type="submit" class="w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
               Create

@@ -40,10 +40,24 @@ class SubscribeController extends Controller
     public function store(Request $request)
     {
         //バリデーション
-        $validator = Validator::make($repuest->all(), [
-            'subscribeTitle' => 'required | max:191',
-            ''
+        $validator = Validator::make($request->all(), [
+            'name' => 'required | max:191',
+            'price' => 'required',
+            'cycle' => 'required',
+            'payment' => 'required',
         ]);
+        //バリデーションエラー
+        if ($validator-> fails()) {
+            return redirect()
+            ->route('subscribe.create')
+            ->withInput()
+            ->withErrors($validator);
+        }
+        //create()は最初から用意されている関数
+        //戻り値は挿入されたレコードの情報
+        $result = Subscribe::create($request->all());
+        //ルーティング「subscribe.index」にリクエスト送信（一覧ページに移動）
+        return redirect()->route('subscribe.index');
 
     }
 
