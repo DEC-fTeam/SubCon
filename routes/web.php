@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\SubscribeController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+//add route SubscribeController
+Route::resource('subscribe',SubscribeController::class);
 
 Route::get('/', function () {
     return view('welcome');
