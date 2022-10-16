@@ -72,7 +72,7 @@
             </x-responsive-nav-link>
         </div>
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('subscribe')" :active="request()->routeIs('subscribe')">
+            <x-responsive-nav-link :href="route('subscribe.create')" :active="request()->routeIs('subscribe.create')">
                 {{ __('Create') }}
             </x-responsive-nav-link>
         </div>
