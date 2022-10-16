@@ -14,20 +14,20 @@
           <div class="mb-6">
             <div class="flex flex-col mb-4">
               <p class="mb-2 uppercase font-bold text-lg text-grey-darkest">subscribe</p>
-              <p class="py-2 px-3 text-grey-darkest" id="subscribe">
+              <p class="py-2 px-3 text-grey-darkest" id="name">
                 {{$subscribe->name}}
               </p>
             </div>
             <div class="flex flex-col mb-4">
               <p class="mb-2 uppercase font-bold text-lg text-grey-darkest">Price</p>
               <p class="py-2 px-3 text-grey-darkest" id="price">
-                {{$subscribe->price}}
+                {{$subscribe->price}}円
               </p>
             </div>
             <div class="flex flex-col mb-4">
               <p class="mb-2 uppercase font-bold text-lg text-grey-darkest">Cycle</p>
               <p class="py-2 px-3 text-grey-darkest" id="cycle">
-                {{$subscribe->cycle}}
+                {{$subscribe->cycle}}ヶ月
               </p>
             </div>
             <div class="flex flex-col mb-4">
@@ -42,7 +42,10 @@
                 {{$subscribe->firstpayment}}
               </p>
             </div>
-            <a href="{{ url()->previous() }}" class="block text-center w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
+            <a href="{{ route('subscribe.delete',$subscribe->id) }}">
+              <h3 class="text-left font-bold text-lg text-grey-dark">削除</h3>
+            </a>
+            <a href="{{ url()->previous() }}" class="text-left font-bold text-lg text-grey-dark">
               Back
             </a>
           </div>
