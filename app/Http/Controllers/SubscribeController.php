@@ -71,6 +71,8 @@ class SubscribeController extends Controller
     public function show($id)
     {
         //
+        $subscribe = Subscribe::find($id);
+        return view('subscribe.show', compact('subscribe'));
     }
 
     /**
