@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer('cycle');
             $table->integer('price');
             $table->date('firstPaymentDate')->nullable();
+            $table->date('endPaymentDate')->nullable();
             $table->string('payment');
             $table->timestamps();
         });
