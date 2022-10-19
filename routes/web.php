@@ -15,6 +15,10 @@ use App\Http\Controllers\SubscribeController;
 |
 */
 
+Route::group(['middleware' => 'auth'], function () {
+    Route::resource('subscribe', SubscribeController::class);
+});
+
 //add route SubscribeController
 Route::resource('subscribe',SubscribeController::class);
 
