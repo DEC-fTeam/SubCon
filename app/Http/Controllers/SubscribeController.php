@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use Validator;
 use App\Models\Subscribe;
 
+//データ追加時にuser_idを入れるため
+use Auth;
+
 class SubscribeController extends Controller
 {
     /**
@@ -15,11 +18,11 @@ class SubscribeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-{
-  // 🔽 編集
-  $subscribes = Subscribe::getAllOrderByUpdated_at();
-  return view('subscribe.index',compact('subscribes'));
-}
+    {
+    // 🔽 編集
+    $subscribes = Subscribe::getAllOrderByUpdated_at();
+    return view('subscribe.index',compact('subscribes'));
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -57,6 +60,8 @@ class SubscribeController extends Controller
         }
         //create()は最初から用意されている関数
         //戻り値は挿入されたレコードの情報
+        //フォームから送られてきたデータとユーザIDをマージして、DBにinsertする
+        $data = $request->merge(['user_id' => Auth::user()->id])->all();
         $result = Subscribe::create($request->all());
         //ルーティング「subscribe.index」にリクエスト送信（一覧ページに移動）
         return redirect()->route('subscribe.index');
@@ -118,5 +123,32 @@ class SubscribeController extends Controller
         $subscribe = Subscribe::find($id);
         return view('subscribe.delete', compact('subscribe'));
     }
+    public function graph()
+    {
+        /*SELECT pricecycle, payment
+         FROM subscribes
+         WHERE Auth::id() = user_id
+         GROUP BY payment;
+         */
+        //料金を出す
 
+        $sum_price = Subscribe::select('payment')
+                    ->selectRaw('SUM(price*cycle) as sum_price')
+                    ->where('user_id',Auth::id())
+                    ->groupby('payment')
+                    ->orderby('payment')
+                    ->pluck('sum_price')
+                    ->all();
+        $payment = Subscribe::select('payment')
+                    ->selectRaw('SUM(price*cycle) as sum_price')
+                    ->where('user_id',Auth::id())
+                    ->groupby('payment')
+                    ->orderby('payment')
+                    ->pluck('payment')
+                    ->all();
+                    //ddd($sum_price);
+        //viewにデータを返す
+        
+        return view('subscribe.graph',compact('sum_price','payment'));
+    }
 }

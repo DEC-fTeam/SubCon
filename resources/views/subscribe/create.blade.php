@@ -30,10 +30,6 @@
               <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="payment">Payment</label>
               <input class="border py-2 px-3 text-grey-darkest" type="text" name="payment" id="payment">
             </div>
-            <div class="flex flex-col mb-4">
-              <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="firstPayment">Start payDay</label>
-              <input class="border py-2 px-3 text-grey-darkest" type="text" name="firstpayment" id="firstpayment">
-            </div>
             <button type="submit" class="w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
               Create
             </button>
