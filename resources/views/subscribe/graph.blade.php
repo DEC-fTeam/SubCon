@@ -8,7 +8,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    <canvas id="myChart" width="250" height="250"></canvas>
+                    <canvas id="myChart" width="2500" height="250"></canvas>
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
                     <script>
                         var ctx = document.getElementById("myChart").getContext('2d');

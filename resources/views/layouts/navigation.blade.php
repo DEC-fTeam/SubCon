@@ -32,6 +32,11 @@
                         {{ __('Graph') }}
                     </x-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('subscribe.sort')" :active="request()->routeIs('subscribe.sort')">
+                        {{ __('Sort') }}
+                    </x-nav-link>
+                </div>
             </div>
 
             <!-- Settings Dropdown -->
@@ -87,9 +92,14 @@
                 {{ __('Create') }}
             </x-responsive-nav-link>
         </div>
-                <div class="pt-2 pb-3 space-y-1">
+        <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('subscribe.graph')" :active="request()->routeIs('subscribe.graph')">
                 {{ __('Graph') }}
+            </x-responsive-nav-link>
+        </div>
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('subscribe.sort')" :active="request()->routeIs('subscribe.sort')">
+                {{ __('Sort') }}
             </x-responsive-nav-link>
         </div>
 
