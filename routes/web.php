@@ -31,5 +31,6 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/subscribe/{subscribe}/delete', [SubscribeController::class, 'delete'])->name('subscribe.delete');
+Route::get('/graph', [SubscribeController::class, 'graph'])->name('subscribe.graph');
 
 require __DIR__.'/auth.php';

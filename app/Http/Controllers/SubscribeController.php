@@ -122,5 +122,24 @@ class SubscribeController extends Controller
         $subscribe = Subscribe::find($id);
         return view('subscribe.delete', compact('subscribe'));
     }
+    public function graph()
+    {
+        /*SELECT pricecycle, payment
+         FROM subscribes
+         WHERE Auth::id() = user_id
+         GROUP BY payment;
+         */
+        //料金を出す
 
+        $log_list = Subscribe::select('payment')
+                    ->selectRaw('SUM(price*cycle) as sum_price')
+                    ->where('user_id',Auth::id())
+                    ->groupby('payment')
+                    ->pluck('sum_price')
+                    ->all();
+                    //ddd($log_list);
+        //viewにデータを返す
+        
+        return view('subscribe.graph',compact('log_list'));
+    }
 }
