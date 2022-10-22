@@ -131,15 +131,23 @@ class SubscribeController extends Controller
          */
         //料金を出す
 
-        $log_list = Subscribe::select('payment')
+        $sum_price = Subscribe::select('payment')
                     ->selectRaw('SUM(price*cycle) as sum_price')
                     ->where('user_id',Auth::id())
                     ->groupby('payment')
+                    ->orderby('payment')
                     ->pluck('sum_price')
                     ->all();
-                    //ddd($log_list);
+        $payment = Subscribe::select('payment')
+                    ->selectRaw('SUM(price*cycle) as sum_price')
+                    ->where('user_id',Auth::id())
+                    ->groupby('payment')
+                    ->orderby('payment')
+                    ->pluck('payment')
+                    ->all();
+                    //ddd($sum_price);
         //viewにデータを返す
         
-        return view('subscribe.graph',compact('log_list'));
+        return view('subscribe.graph',compact('sum_price','payment'));
     }
 }

@@ -12,11 +12,11 @@
                         var myDoughnutChart = new Chart(ctx, {
                             type: 'doughnut',
                             data: {
-                                labels: ["赤", "青", "黄色", "緑", "紫", "橙"],
+                                labels: @json($payment),
                                 datasets: [{
                                     label: '毎月使用額（円）',
                                     //ここにデータを入れる！
-                                    data: [12, 19, 3, 5, 2, 3,],
+                                    data: @json($sum_price),
                                     backgroundColor: [
                                         'rgba(255, 99, 132, 0.2)',
                                         'rgba(54, 162, 235, 0.2)',
