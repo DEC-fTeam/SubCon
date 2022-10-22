@@ -133,17 +133,17 @@ class SubscribeController extends Controller
         //料金を出す
 
         $sum_price = Subscribe::select('payment')
-                    ->selectRaw('SUM(price*cycle) as sum_price')
+                    ->selectRaw('SUM(price/cycle) as sum_price')
                     ->where('user_id',Auth::id())
                     ->groupby('payment')
-                    ->orderby('payment')
+                    ->orderby('sum_price','desc')
                     ->pluck('sum_price')
                     ->all();
         $payment = Subscribe::select('payment')
-                    ->selectRaw('SUM(price*cycle) as sum_price')
+                    ->selectRaw('SUM(price/cycle) as sum_price')
                     ->where('user_id',Auth::id())
                     ->groupby('payment')
-                    ->orderby('payment')
+                    ->orderby('sum_price','desc')
                     ->pluck('payment')
                     ->all();
                     //ddd($sum_price);
