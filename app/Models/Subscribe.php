@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Auth;
 
 class Subscribe extends Model
 {
@@ -20,6 +21,8 @@ class Subscribe extends Model
     //get data from Models
     public static function getAllOrderByUpdated_at()
     {
-        return self::orderBy('updated_at','desc')->get();
+        return self::orderBy('updated_at','desc')
+        ->where('user_id',Auth::id())
+        ->get();
     }
 }
