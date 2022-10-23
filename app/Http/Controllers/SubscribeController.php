@@ -123,6 +123,7 @@ class SubscribeController extends Controller
         $subscribe = Subscribe::find($id);
         return view('subscribe.delete', compact('subscribe'));
     }
+    
     public function graph()
     {
         /*SELECT pricecycle, payment
@@ -151,4 +152,6 @@ class SubscribeController extends Controller
         
         return view('subscribe.graph',compact('sum_price','payment'));
     }
+
+    
 }

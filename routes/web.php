@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\SubscribeController;
-
+use App\Http\Controllers\SortController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,5 +32,6 @@ Route::get('/dashboard', function () {
 
 Route::get('/subscribe/{subscribe}/delete', [SubscribeController::class, 'delete'])->name('subscribe.delete');
 Route::get('/graph', [SubscribeController::class, 'graph'])->name('subscribe.graph');
-
+Route::get('/sort', [SortController::class, 'index'])->name('subscribe.sort');
+Route::get('/sort/{payment}', [SortController::class, 'show'])->name('subscribe.sort_show');
 require __DIR__.'/auth.php';
